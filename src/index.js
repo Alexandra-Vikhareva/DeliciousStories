@@ -1,6 +1,7 @@
 import "./styles.css";
 import { createCard } from "./home";
 import { menu, descriptionMenu, Food } from "./menu";
+import { infoAbout, hours, contacts } from "./about";
 
 function drawHome(){
     const cards = document.createElement('div');
@@ -26,6 +27,11 @@ function drawMenu(){
     }
 }
 
+function drawAbout(){
+    const content = document.querySelector('#content');
+    content.append(infoAbout(), hours(), contacts());
+}
+
 function clearPage(){
     const content = document.querySelector('#content');
     while (content.firstChild) {
@@ -46,3 +52,9 @@ menuBtn.addEventListener('click', () => {
     clearPage();
     drawMenu();
 });
+
+const aboutBtn = document.querySelector('#about');
+aboutBtn.addEventListener('click', () => {
+    clearPage();
+    drawAbout();
+})
