@@ -1,5 +1,6 @@
 import "./styles.css";
 import { createCard } from "./home";
+import { menu, descriptionMenu, Food } from "./menu";
 
 function drawHome(){
     const cards = document.createElement('div');
@@ -17,6 +18,14 @@ function drawHome(){
     content.append(cards);
 }
 
+function drawMenu(){
+    const content = document.querySelector('#content');
+    for (let i = 0; i < menu.length; i++){
+        let item = new Food(menu[i], descriptionMenu[i]);
+        content.appendChild(item.returnDish());
+    }
+}
+
 function clearPage(){
     const content = document.querySelector('#content');
     while (content.firstChild) {
@@ -26,8 +35,14 @@ function clearPage(){
 
 drawHome();
 
-const homeBtn = document.querySelector('#home')
+const homeBtn = document.querySelector('#home');
 homeBtn.addEventListener('click', () => {
         clearPage();
         drawHome();
     });
+
+const menuBtn = document.querySelector('#menu');
+menuBtn.addEventListener('click', () => {
+    clearPage();
+    drawMenu();
+});
