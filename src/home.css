@@ -1,4 +1,4 @@
-#description {
+.description {
     font-size: 1.25em;
     margin: 0 10em;
     color: var(--text-color-second);
@@ -9,7 +9,7 @@ h3 {
     margin: 3em 0;
 }
 
-#cards{
+.cards{
     padding: 50px;
     display: flex;
     flex-wrap: wrap;

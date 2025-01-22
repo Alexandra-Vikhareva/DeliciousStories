@@ -18,17 +18,15 @@ html {
 body {
     margin: 0;
     background-color: var(--light-yellow);
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
     text-align: center;
     background-color: var(--green);
     color: var(--light-yellow);
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    height:30px;
-    width:100%;
+    
 }
 
 footer a {
